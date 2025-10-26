@@ -14,7 +14,7 @@ def build_merkle_from_leaves(leaves, hash_func=hash_trunc16):
     return L[0]
 
 def recompute_root_with_new_leaf(trace, leaf_index, new_value):
-    # recompute leaves from trace but replace leaf_index raw value with new_value (string/number)
+    # recompute leaves 111 from trace but replace leaf_index raw value with new_value (string/number)
     leaves = [hash_trunc16(v) for v in trace]
     leaves[leaf_index] = hash_trunc16(new_value)
     return build_merkle_from_leaves(leaves), leaves
